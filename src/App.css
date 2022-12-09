@@ -1,0 +1,755 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Noto+Sans+KR&family=Shadows+Into+Light&display=swap');
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+#root {
+  --simsimi-yellow-color: #FFE34F;
+  --yellow-color: #EABD46;
+  --gray-color:#909090;
+  --dark-gray-color: #4d4d4d;
+  --light-gray-color: #D7D7D7;
+  --white-color: #ffffff;
+  --button-color: #ffdfdf;
+  font-family: 'Gamja Flower', cursive;
+  font-size: 20px;
+  --arrow-head: 30px;
+  --arrow-head-width: 8px;
+  --arrow-head-style: solid;
+  --arrow-body: 200px;
+  --arrow-body-width: 5px;
+}
+.Root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App {
+  background-color: var(--yellow-color);
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* Cover.js */
+.Cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: salmon; */
+  width: 100%;
+  height:100vh;
+}
+.Cover h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size:25px;
+  margin: 30px 0px 0px 0px;
+}
+.Cover h3 {
+  font-size: 60px;
+  font-weight: bold;
+  padding-top:20vh;
+  margin-bottom: 50px;
+}
+.Cover .CoverInput {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.Cover .CoverInput .SimSimiHead {
+  display: flex;
+  position: relative;
+}
+
+.Cover .CoverInput .SimSimiHead img {
+  width: 200px;
+  position: absolute;
+  left: 30px;
+}
+.Cover .CoverInput .SimSimiEyesBackground {
+  display: flex;
+  position:absolute;
+  width: 150px;
+  height: 30px;
+  top: 90px;
+  left: 60px;
+  border-radius: 25px;
+  background-color: var(--simsimi-yellow-color);
+  /* border: 1px solid black; */
+}
+.Cover .CoverInput .SimSimiEyesBackground .Eyes {
+  display: flex;
+  position:absolute;
+  border-radius: 25px;
+  /* border: 1px solid black; */
+  background-color: #32353F;
+  animation: EyesOnOff infinite;
+}
+
+.Cover .CoverInput .SimSimiEyesBackground .leftEyes {
+  width: 11px;
+  height: 11px;
+  top: 11px;
+  left: 17px;
+}
+.Cover .CoverInput .SimSimiEyesBackground .rightEyes {
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  right: 7px;
+}
+
+/* SimSimiEyesGroup */
+.Cover .CoverInput .SimSimiEyesGroup {
+  display: flex;
+  position:absolute;
+  width: 150px;
+  height: 30px;
+  top: 90px;
+  left: 60px;
+}
+.Cover .CoverInput .SimSimiEyesGroup .Eyes {
+  display: flex;
+  position:absolute;
+  border-radius: 25px;
+  /* border: 1px solid red; */
+  background-color: var(--simsimi-yellow-color);
+  animation: EyesOnOff 1s ease-in infinite alternate-reverse;
+}
+.Cover .CoverInput .SimSimiEyesGroup .leftEyes {
+  width: 12px;
+  height: 12px;
+  top: 8px;
+  left: 17px;
+}
+.Cover .CoverInput .SimSimiEyesGroup .rightEyes {
+  width: 11px;
+  height: 11px;
+  top: 7px;
+  right: 6px;
+}
+
+@keyframes EyesOnOff {
+  0% {
+    top: -10px;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top:9px;
+  }
+}
+
+.Cover .CoverInput .inputName input {
+  width: 450px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 50px;
+  border-style: none;
+  text-align: center;
+  font-size: 23px;
+  box-shadow: 5px 4px 10px #aeaeae;
+  margin-top: 115px;
+}
+
+/* Home.js */
+.Home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.Home .homeTitle h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size:25px;
+  margin: 30px 0px 30px 0px;
+}
+
+.Home .homeTitle h3 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.Home .imgAndbtn {
+  display: flex;
+  position: relative;
+}
+.Home .SimsimiBackground {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--white-color);
+  border-radius: 30px;
+  box-shadow: 5px 4px 10px #b1b1b1 ;
+  width: 60vh;
+  height: 52vh;
+  align-items: center;
+}
+
+.Home .SimsimiBackground span {
+  /* font-family: 'NanumSquare', sans-serif; */
+  font-size: 25px;
+  width: 40vh;
+  /* border: 1px solid black; */
+  position: absolute;
+  top:110px;
+  animation-delay: 2s;
+  animation: fadein 1s 1;
+}
+
+@keyframes fadein {
+  from {
+      opacity: 0.5;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.Home .SimsimiBackground .imgs {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top:40vh;
+  animation: SimSimiImg 0.8s linear infinite alternate;
+}
+.Home .SimsimiBackground img {
+  width: 23vh;
+}
+.Home .SimsimiBackground .simsimi {
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+  animation: topDown 0.4s infinite ease alternate-reverse;
+}
+.Home .SimsimiBackground .shadow {
+  display: flex;
+  /* position: absolute; */
+  /* bottom: 0px; */
+}
+@keyframes SimSimiImg {
+  0% {
+    margin-left: 20px;
+  }
+  100% {
+    margin-right: 20px;
+  }
+}
+@keyframes topDown {
+  0% {
+    bottom: 23px;
+  }
+  100% {
+    bottom: 15px;
+  }
+}
+
+.Home .teachBtn {
+  display: flex;
+  position:fixed;
+  right:30px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 80px 0px 0px 30px; */
+  width: 90px;
+  height: 200px;
+}
+
+.Home .teachBtn button{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  border-style: none;
+  background-color: var(--button-color);
+  box-shadow: 3px 4px 20px #a6a6a6 ;
+  cursor: pointer;
+}
+
+.Home .teachBtn  button:hover {
+  background-color: #dd4200;
+}
+
+.Home .teachBtn .teach {
+  display: flex;
+  margin-top: 130px;
+  font-family: 'NanumSquare', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Home .teachBtn img {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.Home .shareBtn {
+  top: 350px;
+}
+
+.Home .shareBtn img {
+  width: 40px;
+  height: 40px;
+  padding-right:5px;
+}
+
+/* imgAndbtn 밑에 있는 모든 요소들에 페이드아웃할때 적용될 애니메이션 */
+.Home .imgAndbtn .fadeout {
+  /* animation: Fadeout 0.5s ease-out forwards; */
+}
+
+/* 페이드 인 다시 안됨 (여기) */
+.Home .imgAndbtn .fadein {
+  animation: Fadein 0.5s ease-out forwards;
+  /* right: 30px; */
+  /* animation: Fadein 0.5s ease-out forwards; */
+}
+
+
+@keyframes Fadeout {
+  0% {
+    right:30px;
+  }
+  100% {
+    right: -100px;
+  }
+}
+
+@keyframes Fadein {
+  0% {
+    right:-100px;
+  }
+  100% {
+    right: 30px;
+  }
+}
+
+
+.Home .messageInputSendArea{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 30px;
+}
+.Home .messageInputArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Home .messageInputArea input {
+  margin-bottom: 20px;
+  margin-left: 70px;
+  /* width: 45vh; */
+  width: 60vh;
+  height: 4vh;
+  padding: 10px;
+  border-radius: 30px;
+  border-style: none;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 5px 4px 10px #aeaeae ;
+}
+
+.Home .messageInputSendArea .submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50px;
+  border-style: none;
+  margin-left: 20px;
+  background-color: var(--button-color);
+  box-shadow: 3px 4px 20px #a6a6a6 ;
+  cursor: pointer;
+}
+
+.Home .messageInputSendArea .submitBtn:hover {
+  background-color: #dd4200;
+}
+
+.Home .messageInputSendArea .submitBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+.Home .moveleft {
+  animation: MoveLeft 1s ease-out forwards;
+}
+
+@keyframes MoveLeft {
+  0% {
+    right:0vh;
+  }
+  100% {
+    right: 45vh;
+    /* width: 450px; */
+  }
+}
+
+/* MessageList.js */
+.MessageListContainer {
+  /* 부모는 Home 컴포넌트 */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 20%;
+  right: 10%;
+  animation: Fadein 0.5s ease-out forwards;
+  /* border: 1px solid black; */
+}
+
+@keyframes Fadein {
+  0% {
+    opacity: 0;
+    top: 25%;
+  }
+  100% {
+    opacity: 1;
+    top: 20%;
+  }
+}
+
+/* Arrows */
+
+.MessageListContainer .arrow .arrowbody {
+  display: flex;
+  margin-top: 14px;
+  position: absolute;
+  width: var(--arrow-body);
+  border: var(--arrow-body-width) dashed black;
+}
+.MessageListContainer .arrow .arrowHead {
+  position: relative;
+}
+.MessageListContainer .searchingAnimation {
+  animation: topToBottom 0.7s ease-in-out alternate-reverse forwards;
+  animation-iteration-count: 5;
+}
+
+/* arrow_1 */
+.MessageListContainer .arrow_1 {
+  display: flex;
+  position: absolute;
+  left: -250px;
+}
+
+.MessageListContainer .arrow_1 .arrowHead::after {
+  position: absolute;
+  margin-left: calc(var(--arrow-body) - var(--arrow-head));
+  content: '';
+  width: var(--arrow-head); /* 사이즈 */
+  height: var(--arrow-head); /* 사이즈 */
+  border-top: var(--arrow-head-width) var(--arrow-head-style) #000; /* 선 두께 */
+  border-right: var(--arrow-head-width) var(--arrow-head-style) #000; /* 선 두께 */
+  transform: rotate(45deg); /* 각도 */
+}
+
+/* arrow_2 */
+
+.MessageListContainer .arrow_2 {
+  display: flex;
+  position: absolute;
+  left: -250px;
+  top: 90px;
+}
+
+.MessageListContainer .arrow_2 .arrowHead::after {
+  display: flex;
+  position: absolute;
+  margin-left: 0px;
+  content: '';
+  width: var(--arrow-head); /* 사이즈 */
+  height: var(--arrow-head); /* 사이즈 */
+  border-top: var(--arrow-head-width) var(--arrow-head-style) #000; /* 선 두께 */
+  border-right: var(--arrow-head-width) var(--arrow-head-style) #000; /* 선 두께 */
+  transform: rotate(225deg); /* 각도 */
+}
+
+.MessageListContainer .leftToRight {
+  animation: leftToRight 0.3s ease-in-out alternate-reverse forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    top: 20px;
+  }
+  100% {
+    top: 350px;
+  }
+}
+
+
+.MessageListContainer .MessageList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* MessageItem.js */
+.MessageItem {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  font-size: 20px;
+  margin: 20px 0px 20px 0px;
+  /* width: 300px; */
+}
+.MessageItem .teach, .simsimi {
+  display: flex;
+}
+.MessageItem .dashed{
+  border: 5px dashed black;
+}
+
+.MessageItem .explain {
+  display: flex;
+  align-items:center;
+  margin-left: 7px;
+  width: 100px;
+}
+.MessageItem span {
+  font-size: 25px;
+}
+.MessageItem .teachMessage {
+  width: 400px;
+  border-radius: 30px;
+  background-color: #2C2F37;
+  color: var(--white-color);
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+  /* margin-top: 60px; */
+}
+.MessageItem .answer {
+  width: 400px;
+  border-radius: 30px;
+  background-color: #FFDD55;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+}
+
+/* Narration */
+
+.Narration {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  background-color: black;
+  opacity: 0.8;
+  color: var(--white-color);
+  font-size: 25px;
+  /* font-family: 'Noto Sans KR', sans-serif; */
+  font-family: 'NanumSquare', sans-serif;
+}
+
+.Narration .before, .next {
+  cursor: pointer;
+}
+
+.Narration .before {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.Narration .next {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+/* 공통 Modal style */
+
+.Modal {
+  display: flex;
+  position: absolute;
+  font-family: 'NanumcSquare', sans-serif;
+  font-weight: bold;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal .ModalBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--white-color);
+  width: 650px;
+  height: 470px;
+  /* opacity:1; */
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+}
+.Modal .ModalBox .CloseBtn{
+  display:flex;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.Modal .ModalBox .okaybutton button{
+  /* font-family: 'Gamja Flower', cursive; */
+  background-color: var(--white-color);
+  font-weight: bold;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 40px;
+  border-style: none;
+  width: 400px;
+  height: 50px;
+  border-radius: 40px;
+  box-shadow: 3px 3px 10px #a6a6a6 ;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+/* TeachModal */
+
+.TeachModal .TeachModalBox img {
+  width: 25px;
+  position: absolute;
+}
+
+.TeachModal .TeachModalBox .inputs {
+  margin-top: 30px;
+}
+.TeachModal .TeachModalBox .inputs input{
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+  background-color: var(--light-gray-color);
+  width: 430px;
+  height: 55px;
+  border-radius: 10px;
+  margin: 10px 0px 30px 0px;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* SharModal */
+.ShareModal .ShareModalBox .shareModalContents {
+  font-size: 25px;
+  font-weight:normal;
+}
+
+.ShareModal .ShareModalBox .shareModalContents .shareModalTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.ShareModal .ShareModalBox .shareModalContents .userName {
+  font-size: 50px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.ShareModal .ShareModalBox .shareModalExplain {
+  font-size: 20px;
+  color: var(--dark-gray-color);
+}
+
+.ShareModal .linkShareButton {
+  margin-top: 30px;
+}
+.ShareModal .linkShareButton button:hover {
+  background-color: #dd4200;
+}
+
+
+
+
+/* horizontal slide animation */
+
+/* width: calc(100vw - 16px); */
+/* 
+.parent1 {
+    overflow: hidden;
+    font-size: 30px;
+    border: 1px solid black;
+}
+  
+.parent1 span {
+  animation: move 7s linear 0s infinite;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.first {
+  border: 2px solid red;
+}
+.second {
+  margin-left: 820px;
+  border: 2px solid blue;
+}
+
+
+@keyframes move {
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(-1000px,0);
+  }
+} */
+
+
+/* SharedView */
+
+.SharedView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.SharedView .simsimiSay, input {
+  font-size: 30px;
+
+}
+.SharedView .inputArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: centser;
+}
