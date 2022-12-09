@@ -11,7 +11,7 @@ function Root() {
       <div className="Root">
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/sharedSimSimi" element={<SharedView />} />
+          <Route path="/sharedSimSimi/:id" element={<SharedView />} />
         </Routes>
         {/* <RouteTest /> */}
       </div>

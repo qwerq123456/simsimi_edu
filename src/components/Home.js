@@ -26,9 +26,9 @@ const Home = ({username, data, setData, setStep, step, simsimisay, setSimsimisay
     const onCreate = (teachQuestion, teachAnswer) => {
 
         const newMessage = {
-          teachQuestion,
-          teachAnswer,
-          id:dataId.current,
+           question : teachQuestion,
+           answer : teachAnswer,
+        //   id:dataId.current,
         };
         dataId.current += 1;
         console.log("지금까지 가르친 말은 : ",data);
@@ -194,7 +194,7 @@ const Home = ({username, data, setData, setStep, step, simsimisay, setSimsimisay
             { (step > 8) && <MessageList MessageList={data} teachRef={teachRef} arrow_1Ref={arrow_1Ref} arrow_2Ref={arrow_2Ref}/>}
             {/* 심심이 말 가르치기 modal */}
             {isvisible && <TeachModal data={data} onCreate={onCreate} isvisible={isvisible} setIsvisible={setIsvisible} teachQuestionInput={teachQuestionInput} teachAnswerInput={teachAnswerInput}  />}
-            {shareisvisible && <ShareModal shareisvisible={shareisvisible} setShareisvisible={setShareisvisible} username={username}/>}
+            {shareisvisible && <ShareModal shareisvisible={shareisvisible} setShareisvisible={setShareisvisible} username={username} data ={data}/>}
             
         </div>
     );

@@ -1,8 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CloseBtn from "../img/closebutton.png";
+import axios from "axios";
 
+const ShareModal = ({username, shareisvisible, setShareisvisible, data}) => {
+    const [id, setId] = useState("");
 
-const ShareModal = ({username, shareisvisible, setShareisvisible}) => {
+    const handleCopyClipBoard = async (text) => {
+        try {
+          await navigator.clipboard.writeText(text);
+          console.log(text);
+          alert('복사 성공!');
+        } catch (error) {
+          alert('복사 실패!');
+        }
+    };
+
+    const postData = async () => {
+        try{
+            const requestData = {
+                name : username,
+                talkSets : data
+            }
+            const responseData = await axios.post("http://localhost:1234/simsimi", requestData);
+            setId(responseData.data.id);
+            // console.log(JSON.stringify(responseData.data.id));
+        } catch(e) {
+            console.log("postData fail with error :", e);
+        }
+    }
+
+    useEffect(() => {
+        postData().catch(error => console.log(error));
+    }, []);
 
     const handleCloseModal = () => {
         setShareisvisible(false);
@@ -10,7 +39,8 @@ const ShareModal = ({username, shareisvisible, setShareisvisible}) => {
     }
     
     const handleGoShare = () => {
-        alert("링크를 복사했습니다!");
+        handleCopyClipBoard("http://localhost:3000/sharedSimSimi/" + id);
+        // alert("링크를 복사했습니다!");
         setShareisvisible(false);
         console.log("모달 닫힘!", shareisvisible);
     }
